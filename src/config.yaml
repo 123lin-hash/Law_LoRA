@@ -1,0 +1,27 @@
+model:
+  base_model: "/data/linfengyun/models/Qwen/Qwen2.5-7B-Instruct"
+  torch_dtype: "bfloat16"
+  trust_remote_code: true
+  use_fast_tokenizer: false
+
+data:
+  train_file: "/data/linfengyun/LoRA/dataset/train.json"
+  system_prompt_file: "prompt.md"
+  max_length: 2048
+
+lora:
+  r: 8
+  alpha: 32
+  dropout: 0.1
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+training:
+  output_dir: "./output/Qwen2.5-7B-Instruct_lora"
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  logging_steps: 10
+  num_train_epochs: 3
+  save_steps: 100
+  learning_rate: 0.0001
+  gradient_checkpointing: true
+  save_on_each_node: true

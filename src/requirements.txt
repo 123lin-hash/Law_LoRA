@@ -1,0 +1,1 @@
+torch transformers datasets peft pandas matplotlib pyyaml streamlit nltk rouge-chinese jieba bert-score modelscope
