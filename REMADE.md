@@ -16,5 +16,5 @@
 `python embedding_download.py`
 ## 模型微调训练
 `python train.py`
-## 运行指南
+## 主界面
 `python main.py`
